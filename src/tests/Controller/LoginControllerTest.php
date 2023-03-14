@@ -3,6 +3,7 @@ namespace App\Tests\Controller;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
+use App\Tests\Traits\DependenciesTrait;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -14,6 +15,8 @@ use Symfony\Component\Security\Csrf\TokenStorage\SessionTokenStorage;
 
 class LoginControllerTest extends WebTestCase
 {
+    use DependenciesTrait;
+
     public function testSuccessfulLogin()
     {
         $client = static::createClient();
@@ -24,18 +27,14 @@ class LoginControllerTest extends WebTestCase
         $user->setRoles(['ROLE_ADMIN']);
         $password = '123456';
 
-        /** @var UserPasswordHasherInterface $hasher */
-        $hasher = static::getContainer()->get(UserPasswordHasherInterface::class);
+        $hasher = $this->getPasswordHasher();
         $encodedPassword = $hasher->hashPassword($user, $password);
         $user->setPassword($encodedPassword);
 
-        /** @var UserRepository $rep */
-        $rep = static::getContainer()->get(UserRepository::class);
+        $rep = $this->getUserRepository();
         $rep->save($user);
 
-        /** @var EntityManagerInterface $em */
-        $em = static::getContainer()->get(EntityManagerInterface::class);
-        $em->clear();
+        $this->getEntityManager()->clear();
 
         $csrfToken = 'a_token';
         $this->setCsrfToken($csrfToken);
@@ -68,18 +67,14 @@ class LoginControllerTest extends WebTestCase
         $user->setRoles(['ROLE_ADMIN']);
         $password = '123456';
 
-        /** @var UserPasswordHasherInterface $hasher */
-        $hasher = static::getContainer()->get(UserPasswordHasherInterface::class);
+        $hasher = $this->getPasswordHasher();
         $encodedPassword = $hasher->hashPassword($user, $password);
         $user->setPassword($encodedPassword);
 
-        /** @var UserRepository $rep */
-        $rep = static::getContainer()->get(UserRepository::class);
+        $rep = $this->getUserRepository();
         $rep->save($user);
 
-        /** @var EntityManagerInterface $em */
-        $em = static::getContainer()->get(EntityManagerInterface::class);
-        $em->clear();
+        $this->getEntityManager()->clear();
 
         $csrfToken = 'a_token';
         $this->setCsrfToken($csrfToken);
