@@ -160,4 +160,9 @@ class Category
         $this->ogDescription = $ogDescription;
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return $this->title;
+    }
 }
