@@ -1,0 +1,15 @@
+{% block editorjs_widget %}
+    {% set editorId = 'editorjs_' ~ id %}
+    <input type="hidden" data-editorjs="{{ editorId }}" {{ block('widget_attributes') }} value="{{ value|json_encode }}">
+    <div id="{{ editorId }}" data-input-id="{{ id }}" class="editorjs-holder"></div>
+
+    <script>
+        if(window.initEditorjs) {
+            window.initEditorjs('{{ editorId }}', {{ value|json_encode|raw }});
+        } else {
+            document.addEventListener('DOMContentLoaded', () => {
+                window.initEditorjs('{{ editorId }}', {{ value|json_encode|raw }});
+            });
+        }
+    </script>
+{% endblock editorjs_widget %}

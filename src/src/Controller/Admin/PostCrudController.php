@@ -2,7 +2,9 @@
 
 namespace App\Controller\Admin;
 
+use App\EasyAdmin\Field\EditorJSField;
 use App\Entity\Blog\Post;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
@@ -15,6 +17,15 @@ class PostCrudController extends AbstractCrudController
     public static function getEntityFqcn(): string
     {
         return Post::class;
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        $crud = parent::configureCrud($crud);
+
+        return $crud
+            ->addFormTheme('admin/form/editorjs_widget.html.twig')
+            ->renderContentMaximized();
     }
 
     public function configureFields(string $pageName): iterable
@@ -30,7 +41,7 @@ class PostCrudController extends AbstractCrudController
             ->setUploadDir('public/uploads/post')
             ->setBasePath('uploads/post');
 
-        yield TextareaField::new('content')->hideOnIndex();
+        yield EditorJSField::new('content')->hideOnIndex();
 
         yield FormField::addTab('Meta information');
         yield TextField::new('metaTitle')->hideOnIndex();

@@ -12,3 +12,6 @@ restart:
 
 php-connect:
 	docker-compose exec php-fpm bash
+
+run-node:
+	docker-compose run node bash
