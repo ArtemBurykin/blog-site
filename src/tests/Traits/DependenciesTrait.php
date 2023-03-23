@@ -1,6 +1,7 @@
 <?php
 namespace App\Tests\Traits;
 
+use App\Editorjs\Twig\EditorjsTwigExtension;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -25,4 +26,8 @@ trait DependenciesTrait
         return static::getContainer()->get(EntityManagerInterface::class);
     }
 
+    protected function getEditorjsExtension(): EditorjsTwigExtension
+    {
+        return static::getContainer()->get(EditorjsTwigExtension::class);
+    }
 }
