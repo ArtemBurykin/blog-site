@@ -1,4 +1,5 @@
 .env
+!src/.env
 .data
 .idea
 logs

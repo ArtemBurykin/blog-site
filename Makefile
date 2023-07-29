@@ -11,7 +11,7 @@ restart:
 	make down && make up
 
 php-connect:
-	docker-compose exec php-fpm bash
+	docker-compose exec php-fpm sh
 
 run-node:
-	docker-compose run node bash
+	docker-compose run --rm node bash
