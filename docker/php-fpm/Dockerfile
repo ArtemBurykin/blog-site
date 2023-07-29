@@ -1,5 +1,8 @@
 FROM php:8.2-fpm-alpine
 
+ARG UID
+ARG GID
+
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 RUN apk --update add libpng-dev libjpeg-turbo-dev openssl-dev zlib-dev curl \
@@ -21,4 +24,4 @@ RUN echo "xdebug.idekey=\"PHPSTORM\"" >> /usr/local/etc/php/conf.d/docker-php-ex
 RUN echo "xdebug.client_port=9001" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 RUN echo 'memory_limit = 512M' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini;
 
-USER 1000:1000
+USER ${UID}:${GID}
