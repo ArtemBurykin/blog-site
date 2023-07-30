@@ -9,13 +9,10 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')
-    .addStyleEntry('reset-password', './assets/styles/reset-password/reset-password.scss')
-    .addEntry('app', './assets/app.js')
-    .addEntry('admin', './assets/admin.js')
+    .addStyleEntry('reset-password', './assets/common/features/reset-password/styles/reset-password.scss')
+    .addStyleEntry('common', './assets/common/styles/common.scss')
+    .addEntry('admin', './assets/admin/admin.js')
     .enableSassLoader()
-
-    // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
-    .enableStimulusBridge('./assets/controllers.json')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

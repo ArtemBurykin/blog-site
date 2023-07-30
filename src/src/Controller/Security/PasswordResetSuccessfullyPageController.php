@@ -12,6 +12,6 @@ class PasswordResetSuccessfullyPageController extends AbstractController
 {
     public function __invoke(): Response
     {
-        return $this->render('reset_password/password_reset_successfully.html.twig');
+        return $this->render('common/features/reset_password/password_reset_successfully.html.twig');
     }
 }
