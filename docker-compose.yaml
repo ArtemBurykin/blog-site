@@ -55,3 +55,22 @@ services:
     volumes:
       - ./src:/home/src
     working_dir: /home/src
+
+  messenger:
+    build:
+      context: docker/php-fpm
+      args:
+        UID: ${UID}
+        GID: ${GID}
+    environment:
+      DB_DATABASE: ${DB_DATABASE}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./src:/home/src
+    depends_on:
+      - db
+    user: ${UID}:${GID}
+    restart: always
+    working_dir: /home/src
+    command: sh -c "php bin/console messenger:consume async"

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Security;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,6 +20,9 @@ class LoginController extends AbstractController
             'csrf_token_intention' => 'authenticate',
             'last_username' => $lastUsername,
             'target_path' => $this->generateUrl('admin'),
+            'forgot_password_enabled' => true,
+            'forgot_password_path' => $this->generateUrl('app_forgot_password_request'),
+            'forgot_password_label' => 'Forgot your password?',
         ]);
     }
 }

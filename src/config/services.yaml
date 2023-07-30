@@ -7,6 +7,8 @@ parameters:
     maxFileSize: 2 #Mb
     uploadDirPath: '%kernel.project_dir%/public/uploads'
     uploadDirUrl: '/uploads'
+    siteName: 'Blog'
+    router.request_context.host: '%env(HOST)%'
 
 services:
     # default configuration for services in *this* file
