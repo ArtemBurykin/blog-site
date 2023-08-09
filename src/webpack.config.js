@@ -9,7 +9,7 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 Encore
     .setOutputPath('public/build/')
     .setPublicPath('/build')
-    .addStyleEntry('reset-password', './assets/common/features/reset-password/styles/reset-password.scss')
+    .addStyleEntry('reset-password', './assets/security/reset-password/styles/reset-password.scss')
     .addStyleEntry('common', './assets/common/styles/common.scss')
     .addEntry('admin', './assets/admin/admin.js')
     .enableSassLoader()

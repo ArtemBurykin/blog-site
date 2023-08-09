@@ -57,7 +57,7 @@ class ResetPasswordController extends AbstractController
             );
         }
 
-        return $this->render('common/features/reset_password/request.html.twig', [
+        return $this->render('security/features/reset_password/request.html.twig', [
             'requestForm' => $form->createView(),
         ]);
     }
@@ -74,7 +74,7 @@ class ResetPasswordController extends AbstractController
             $resetToken = $this->resetPasswordHelper->generateFakeResetToken();
         }
 
-        return $this->render('common/features/reset_password/check_email.html.twig', [
+        return $this->render('security/features/reset_password/check_email.html.twig', [
             'resetToken' => $resetToken,
         ]);
     }
@@ -134,7 +134,7 @@ class ResetPasswordController extends AbstractController
             return $this->redirectToRoute('app_password_reset_successfully');
         }
 
-        return $this->render('common/features/reset_password/reset.html.twig', [
+        return $this->render('security/features/reset_password/reset.html.twig', [
             'resetForm' => $form->createView(),
         ]);
     }
@@ -160,7 +160,7 @@ class ResetPasswordController extends AbstractController
             ->from(new Address($this->emailFrom, $this->siteName))
             ->to($user->getEmail())
             ->subject('Your password reset request')
-            ->htmlTemplate('common/features/reset_password/email.html.twig')
+            ->htmlTemplate('security/features/reset_password/email.html.twig')
             ->context([
                 'resetToken' => $resetToken,
             ])

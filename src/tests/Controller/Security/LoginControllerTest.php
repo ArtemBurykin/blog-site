@@ -1,5 +1,5 @@
 <?php
-namespace App\Tests\Controller;
+namespace App\Tests\Controller\Security;
 
 use App\Entity\User;
 use App\Tests\Traits\DependenciesTrait;
