@@ -2,8 +2,8 @@
 
 namespace App\Tests\Editorjs\Twig;
 
-use App\Tests\Traits\DependenciesTrait;
 use App\Editorjs\Twig\EditorjsTwigExtension;
+use App\Tests\Traits\DependenciesTrait;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -11,7 +11,7 @@ class EditorjsTwigExtensionTest extends KernelTestCase
 {
     use DependenciesTrait;
 
-    public function testEditorjsParse_Success()
+    public function testEditorjsParseSuccess()
     {
         /** @var EditorjsTwigExtension $extension */
         $extension = static::getContainer()->get(EditorjsTwigExtension::class);
@@ -39,7 +39,7 @@ class EditorjsTwigExtensionTest extends KernelTestCase
         $this->assertEquals('Содержимое', $crawler->filter('p')->innerText());
     }
 
-    public function testEditorjsParse_UnregisteredTag_Success()
+    public function testEditorjsParseUnregisteredTagSuccess()
     {
         /** @var EditorjsTwigExtension $extension */
         $extension = static::getContainer()->get(EditorjsTwigExtension::class);
@@ -66,7 +66,7 @@ class EditorjsTwigExtensionTest extends KernelTestCase
         $this->assertEquals('Содержимое', $crawler->filter('p')->innerText());
     }
 
-    public function testEditorjsParse_EmptyContent_Success()
+    public function testEditorjsParseEmptyContentSuccess()
     {
         /** @var EditorjsTwigExtension $extension */
         $extension = static::getContainer()->get(EditorjsTwigExtension::class);
@@ -82,7 +82,7 @@ class EditorjsTwigExtensionTest extends KernelTestCase
         );
     }
 
-    public function testEditorjsParse_ArrayContent_Success()
+    public function testEditorjsParseArrayContentSuccess()
     {
         /** @var EditorjsTwigExtension $extension */
         $extension = static::getContainer()->get(EditorjsTwigExtension::class);
@@ -98,7 +98,7 @@ class EditorjsTwigExtensionTest extends KernelTestCase
         );
     }
 
-    public function testEditorjsParse_StringContent_Success()
+    public function testEditorjsParseStringContentSuccess()
     {
         /** @var EditorjsTwigExtension $extension */
         $extension = static::getContainer()->get(EditorjsTwigExtension::class);

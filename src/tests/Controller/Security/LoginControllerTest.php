@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Tests\Controller\Security;
 
 use App\Entity\User;

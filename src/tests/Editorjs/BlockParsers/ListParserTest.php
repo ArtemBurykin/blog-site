@@ -10,7 +10,7 @@ class ListParserTest extends KernelTestCase
 {
     use DependenciesTrait;
 
-    public function testEditorjsParseList_Ordered_Success()
+    public function testEditorjsParseListOrderedSuccess()
     {
         $extension = $this->getEditorjsExtension();
 
@@ -41,7 +41,7 @@ class ListParserTest extends KernelTestCase
         $this->assertEquals('Второй элемент списка', $li->eq(1)->innerText());
     }
 
-    public function testEditorjsParseList_Unordered_Success()
+    public function testEditorjsParseListUnorderedSuccess()
     {
         $extension = $this->getEditorjsExtension();
 
@@ -72,7 +72,7 @@ class ListParserTest extends KernelTestCase
         $this->assertEquals('Второй элемент списка', $li->eq(1)->innerText());
     }
 
-    public function testEditorjsParseList_NoItems_Success()
+    public function testEditorjsParseListNoItemsSuccess()
     {
         $extension = $this->getEditorjsExtension();
 

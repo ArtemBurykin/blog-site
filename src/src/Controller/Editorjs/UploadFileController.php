@@ -37,7 +37,7 @@ class UploadFileController extends AbstractController
             return $this->createFailResponse(JsonResponse::HTTP_FORBIDDEN);
         }
 
-        if ($request->files->count() === 0) {
+        if (0 === $request->files->count()) {
             return $this->createFailResponse(JsonResponse::HTTP_BAD_REQUEST);
         }
 

@@ -64,6 +64,7 @@ class Category
     public function setTitle(string $title): Category
     {
         $this->title = $title;
+
         return $this;
     }
 
@@ -75,6 +76,7 @@ class Category
     public function setSeoUrl(string $seoUrl): self
     {
         $this->seoUrl = $seoUrl;
+
         return $this;
     }
 
@@ -82,7 +84,6 @@ class Category
     {
         return $this->seoUrl;
     }
-
 
     public function getDescription(): ?string
     {
@@ -92,6 +93,7 @@ class Category
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
         return $this;
     }
 
@@ -103,6 +105,7 @@ class Category
     public function setMainImage(?string $mainImage): self
     {
         $this->mainImage = $mainImage;
+
         return $this;
     }
 
@@ -114,6 +117,7 @@ class Category
     public function setMetaDescription(?string $metaDescription): self
     {
         $this->metaDescription = $metaDescription;
+
         return $this;
     }
 
@@ -125,12 +129,14 @@ class Category
     public function setMetaTitle(?string $metaTitle): self
     {
         $this->metaTitle = $metaTitle;
+
         return $this;
     }
 
     public function setOgTitle(?string $ogTitle): Category
     {
         $this->ogTitle = $ogTitle;
+
         return $this;
     }
 
@@ -142,6 +148,7 @@ class Category
     public function setOgImage(?string $ogImage): Category
     {
         $this->ogImage = $ogImage;
+
         return $this;
     }
 
@@ -158,6 +165,7 @@ class Category
     public function setOgDescription(?string $ogDescription): self
     {
         $this->ogDescription = $ogDescription;
+
         return $this;
     }
 

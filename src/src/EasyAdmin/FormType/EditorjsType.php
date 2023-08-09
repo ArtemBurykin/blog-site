@@ -16,7 +16,7 @@ class EditorjsType extends AbstractType
     {
         $builder->addModelTransformer(new CallbackTransformer(
             function ($value) {
-                if ($value === null) {
+                if (null === $value) {
                     return [];
                 }
 
@@ -42,4 +42,3 @@ class EditorjsType extends AbstractType
             ]);
     }
 }
-

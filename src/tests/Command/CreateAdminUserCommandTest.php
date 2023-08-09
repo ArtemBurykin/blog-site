@@ -54,7 +54,7 @@ class CreateAdminUserCommandTest extends KernelTestCase
     /**
      * @dataProvider dataProviderParams
      */
-    public function testFail_WithoutParam(array $params)
+    public function testFailWithoutParam(array $params)
     {
         $kernel = self::bootKernel();
         $application = new Application($kernel);
@@ -65,7 +65,7 @@ class CreateAdminUserCommandTest extends KernelTestCase
 
         try {
             $commandTester->execute($params);
-        } catch(RuntimeException $e) {
+        } catch (RuntimeException $e) {
             $this->assertStringContainsString('Not enough arguments', $e->getMessage());
         }
 
@@ -74,7 +74,7 @@ class CreateAdminUserCommandTest extends KernelTestCase
         $this->assertCount(0, $users);
     }
 
-    public function testFail_UserNotUnique()
+    public function testFailUserNotUnique()
     {
         $kernel = self::bootKernel();
         $application = new Application($kernel);

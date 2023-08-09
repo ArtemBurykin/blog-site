@@ -6,13 +6,11 @@ use stdClass;
 
 class HeaderParser implements BlockParser
 {
-    /** {@inheritdoc} */
     public static function getBlockType(): string
     {
         return 'header';
     }
 
-    /** {@inheritdoc} */
     public function parse(stdClass $blockData): string
     {
         // Заголовком по умолчанию ставится H2 т.к. это наиболее ожидаемый результат.

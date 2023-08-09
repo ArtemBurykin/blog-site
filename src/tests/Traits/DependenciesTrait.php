@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Tests\Traits;
 
 use App\Editorjs\Twig\EditorjsTwigExtension;

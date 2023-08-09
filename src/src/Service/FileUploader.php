@@ -5,9 +5,9 @@ namespace App\Service;
 use App\Exception\FileTooLargeException;
 use Exception;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\String\Slugger\SluggerInterface;
+
 use const PATHINFO_FILENAME;
 
 /**
@@ -33,9 +33,9 @@ class FileUploader
      *
      * @param string $uploadSubDir директория в загрузках, куда мы поместим файл
      *
-     * @throws Exception
-     *
      * @return string имя файла
+     *
+     * @throws Exception
      */
     public function uploadFile(UploadedFile $file, string $uploadSubDir): string
     {

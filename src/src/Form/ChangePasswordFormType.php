@@ -20,9 +20,9 @@ class ChangePasswordFormType extends AbstractType
                 'options' => [
                     'attr' => [
                         'autocomplete' => 'new-password',
-                        'class' => 'reset-password__input'
+                        'class' => 'reset-password__input',
                     ],
-                    'label_attr' => ['class' => 'reset-password__label']
+                    'label_attr' => ['class' => 'reset-password__label'],
                 ],
                 'first_options' => [
                     'constraints' => [

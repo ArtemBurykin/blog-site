@@ -6,13 +6,11 @@ use stdClass;
 
 class ListParser implements BlockParser
 {
-    /** {@inheritdoc} */
     public static function getBlockType(): string
     {
         return 'list';
     }
 
-    /** {@inheritdoc} */
     public function parse(stdClass $blockData): string
     {
         $listTag = match ($blockData->style) {

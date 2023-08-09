@@ -50,7 +50,7 @@ class Post
 
     #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'posts')]
     #[ORM\JoinColumn(name: 'category_id', referencedColumnName: 'id')]
-    private Category|null $category  = null;
+    private ?Category $category = null;
 
     public function __construct()
     {

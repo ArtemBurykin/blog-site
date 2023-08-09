@@ -37,7 +37,7 @@ class HeaderParserTest extends KernelTestCase
         $this->assertEquals('some text', $h->innerText());
     }
 
-    public function testSuccessful_OtherLevel()
+    public function testSuccessfulOtherLevel()
     {
         $extension = $this->getEditorjsExtension();
 

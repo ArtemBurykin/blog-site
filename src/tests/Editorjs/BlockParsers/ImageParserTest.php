@@ -10,7 +10,7 @@ class ImageParserTest extends KernelTestCase
 {
     use DependenciesTrait;
 
-    public function testParse_Success()
+    public function testParseSuccess()
     {
         $extension = $this->getEditorjsExtension();
 

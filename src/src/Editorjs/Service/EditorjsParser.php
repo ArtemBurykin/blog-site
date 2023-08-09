@@ -34,7 +34,7 @@ class EditorjsParser
      */
     public function parse(?stdClass $data): ?string
     {
-        if (!$data || count($data->blocks) === 0) {
+        if (!$data || 0 === count($data->blocks)) {
             return null;
         }
 

@@ -2,9 +2,7 @@
 
 namespace App\Tests\Editorjs\BlockParsers;
 
-use App\Editorjs\BlockParsers\ParagraphParser;
 use App\Tests\Traits\DependenciesTrait;
-use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\DomCrawler\Crawler;
 

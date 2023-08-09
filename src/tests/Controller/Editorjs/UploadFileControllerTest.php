@@ -14,7 +14,7 @@ class UploadFileControllerTest extends WebTestCase
 {
     use DependenciesTrait;
 
-    public function testFail_NotAuthenticated()
+    public function testFailNotAuthenticated()
     {
         $client = static::createClient();
 
@@ -34,7 +34,7 @@ class UploadFileControllerTest extends WebTestCase
         fclose($file);
     }
 
-    public function testFail_UserNotAdmin()
+    public function testFailUserNotAdmin()
     {
         $client = static::createClient();
 
@@ -63,7 +63,7 @@ class UploadFileControllerTest extends WebTestCase
         fclose($file);
     }
 
-    public function testFail_EmptyRequest()
+    public function testFailEmptyRequest()
     {
         $client = static::createClient();
 
@@ -125,7 +125,7 @@ class UploadFileControllerTest extends WebTestCase
         unlink($filePath);
     }
 
-    public function testFail_FileTooLarge()
+    public function testFailFileTooLarge()
     {
         $client = static::createClient();
 
@@ -158,7 +158,7 @@ class UploadFileControllerTest extends WebTestCase
         $this->assertEquals(['success' => 0], $data);
     }
 
-    public function testFail_ErrorOccurred()
+    public function testFailErrorOccurred()
     {
         $client = static::createClient();
 
