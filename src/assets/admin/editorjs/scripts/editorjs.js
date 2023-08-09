@@ -52,7 +52,7 @@ window.initEditorjs = (holderId, data) => {
         };
 
         return config;
-    }
+    };
 
     const config = configEditorjs(holderId, data);
     window.editorsJs[holderId] = new EditorJS(config);

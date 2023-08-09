@@ -1,0 +1,24 @@
+{
+    "root": true,
+    "env": {
+        "browser": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "sourceType": "module"
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+        "quotes": [
+            "warn",
+            "single",
+            {
+                "allowTemplateLiterals": true
+            }
+        ],
+        "semi": "warn",
+        "indent": ["error", 4],
+        "space-infix-ops": ["error", { "int32Hint": false }],
+        "brace-style": ["error","1tbs"]
+    }
+}
