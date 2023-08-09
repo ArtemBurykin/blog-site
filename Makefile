@@ -17,4 +17,7 @@ run-node:
 	docker-compose run --rm node bash
 
 php-fix:
-	docker compose exec php-fpm php vendor/bin/php-cs-fixer fix
+	docker compose run --rm php-fpm php vendor/bin/php-cs-fixer fix
+
+node-fix:
+	docker compose run --rm node npm run fix
